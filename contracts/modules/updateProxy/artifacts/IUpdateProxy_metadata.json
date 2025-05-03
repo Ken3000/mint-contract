@@ -1,0 +1,188 @@
+{
+	"compiler": {
+		"version": "0.8.23+commit.f704f362"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getImpl",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "_allImpl",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "_selector",
+						"type": "bytes4"
+					}
+				],
+				"name": "getModuleBySelector",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "_imp",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getModules",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes4",
+								"name": "selector",
+								"type": "bytes4"
+							},
+							{
+								"internalType": "address",
+								"name": "module",
+								"type": "address"
+							}
+						],
+						"internalType": "struct IUpdateProxy.modules[]",
+						"name": "_modules",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getSelectors",
+				"outputs": [
+					{
+						"internalType": "bytes4[]",
+						"name": "",
+						"type": "bytes4[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_impl",
+						"type": "address"
+					}
+				],
+				"name": "getSelectorsByImpl",
+				"outputs": [
+					{
+						"internalType": "bytes4[]",
+						"name": "_selectors",
+						"type": "bytes4[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "module",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes4[]",
+								"name": "selectors",
+								"type": "bytes4[]"
+							}
+						],
+						"internalType": "struct DynamicRouterStorage.moduleDefinition[]",
+						"name": "_modules",
+						"type": "tuple[]"
+					}
+				],
+				"name": "updateModules",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Интерфейс модуля UpdateProxy.      Зависимость от \"/contracts/storage/LibDynamicRouterStorage.sol\"",
+			"kind": "dev",
+			"methods": {
+				"getImpl()": {
+					"details": "получение всех функций"
+				},
+				"getModuleBySelector(bytes4)": {
+					"details": "получение адреса имплементации по селектору"
+				},
+				"getModules()": {
+					"details": "получение всех модулей"
+				},
+				"getSelectors()": {
+					"details": "получение всех селекторов"
+				},
+				"getSelectorsByImpl(address)": {
+					"details": "получение селекторов имплементации"
+				},
+				"updateModules((address,bytes4[])[])": {
+					"details": "обновление селекторов модулей\t\t"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/modules/updateProxy/IUpdateProxy.sol": "IUpdateProxy"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"/contracts/storage/LibDynamicRouterStorage.sol": {
+			"keccak256": "0xfd6c004d1d1d29f60d09daf5f167715890a7dcf0d5fe242e602cc2040c3db8a0",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://bddf0ac0035b202ad8429a10b7fee816d82b0e63436a092370225b5ae595d12f",
+				"dweb:/ipfs/QmXL1SPyi4zUg2hNtfVmuag7X5etmvEukjEpF9wZ8fL2wE"
+			]
+		},
+		"contracts/modules/updateProxy/IUpdateProxy.sol": {
+			"keccak256": "0x81f8cecf82d1e6e85afe8085e472edbbe73da15e38469276f9a6b384a90ac584",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://3425adf2f5ea1b30cfdf278b43452b4c7a6c1fad73bb885fd584b27890491245",
+				"dweb:/ipfs/QmcJ4BmD46psRoS5Z5vMNfaB454zTtkJA29PQsRRcd86HY"
+			]
+		}
+	},
+	"version": 1
+}

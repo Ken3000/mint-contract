@@ -1,0 +1,356 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "AccessDenied",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "EmptyAddress",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "TimedOut",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "ValueTooHigh",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "AcceptTransferNewOwner",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "oldOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "InitialTransferOwner",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_graceperiod",
+						"type": "uint256"
+					}
+				],
+				"name": "SetNewGracePeriod",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "MODULE_NAME",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MODULE_VERSION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getGracePeriod",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getNewOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTimestampExp",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_seconds",
+						"type": "uint256"
+					}
+				],
+				"name": "setGracePeriod",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "transferNewOwnerAccept",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					}
+				],
+				"name": "transferOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"custom:version": "1.0.0",
+			"details": "Модуль управления владельцем      Модуль возможно использовать как отдельно, так и в качестве миксина",
+			"errors": {
+				"AccessDenied(address)": [
+					{
+						"details": "Функцию использует на владелец"
+					}
+				],
+				"EmptyAddress()": [
+					{
+						"details": "Пустой адрес"
+					}
+				],
+				"TimedOut(address)": [
+					{
+						"details": "Время перехода прав новому владельцу завершено"
+					}
+				]
+			},
+			"events": {
+				"AcceptTransferNewOwner(address,uint256)": {
+					"details": "Подтверждение передачи прав новым владельцем"
+				},
+				"InitialTransferOwner(address,address,uint256)": {
+					"details": "Инициация передачи прав владения"
+				},
+				"SetNewGracePeriod(address,uint256)": {
+					"details": "Установлено новое значение грейс периода"
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"getGracePeriod()": {
+					"details": "Геттеры"
+				},
+				"setGracePeriod(uint256)": {
+					"details": "установка грейс периода"
+				},
+				"transferNewOwnerAccept()": {
+					"details": "подтверждение передачи прав новым владельцем"
+				},
+				"transferOwner(address)": {
+					"details": "инициализация передачи прав"
+				}
+			},
+			"stateVariables": {
+				"MODULE_NAME": {
+					"details": "Название модуля"
+				},
+				"MODULE_VERSION": {
+					"details": "Версия модуля"
+				}
+			},
+			"title": "UpdateProxy",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Библиотека хранилища миксина Ownable*",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/modules/ownable/Ownable.sol": "Ownable"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"/contracts/free/FreeVersion.sol": {
+			"keccak256": "0x913bb58e1b64814aedf645390cb599dfb039e715df848e0d5096c740b754e859",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://9faf8732188eff71ca94ca7327a122bac72e7965846f49da5b36849d4e5c5121",
+				"dweb:/ipfs/QmYVyPu2LPmRG5QrtCPGoNwegDNt7k8rAShHsYs1SYiKCJ"
+			]
+		},
+		"/contracts/modules/IModule.sol": {
+			"keccak256": "0x117ed7288ac6edb54b173aeb67b737f393c7d27b644ccbcd311d59f3d79d9864",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://2afe56cba202dac70804b96dc26ac717c3d0aec920f7d84f1ede00c736c12ad8",
+				"dweb:/ipfs/QmX23n4igbpkWj7BC2U46KbreM3VPx8j9g4aUenAumuTST"
+			]
+		},
+		"contracts/lib/@openzeppelin/contracts/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"contracts/modules/ownable/IOwnable.sol": {
+			"keccak256": "0xf8d776c411cf765181fa61662c0457ad47729bfb92c991da311cc6c45c5c8374",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://73bdf72419569e3b0883325d029e8bd33b06f27df28bcd22b47f577e1ddf7a0f",
+				"dweb:/ipfs/QmeF9S43M2HmbvQ6jSmxjsE1beotmAGDYRv3NcD6sVKX13"
+			]
+		},
+		"contracts/modules/ownable/Ownable.sol": {
+			"keccak256": "0xb7156339bbb98bacf03ea405aad4b8b4d569d19150bf6770db641635628079db",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://87b148827c93200246cb013353cfd65e252b67bfa9f9b1411595a22b028d8fc3",
+				"dweb:/ipfs/QmcCfqqbmGFfSNyUoNpSkajbj38hCaN7kH22UmsLycuJGH"
+			]
+		},
+		"contracts/storage/LibOwnableStorage.sol": {
+			"keccak256": "0xbeb030b991fbd2f5674b229107dd88a88fabc4605716511911e65a6bff677ed3",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://b71ea759f699c2bc13afbb596a01c3d42b70be33c76898290e27fd9dc67b67c6",
+				"dweb:/ipfs/QmXtx9Hv9Nw6m3cnAaL7dHcsd2tFWuBPLr6iMpaxKTF59k"
+			]
+		}
+	},
+	"version": 1
+}

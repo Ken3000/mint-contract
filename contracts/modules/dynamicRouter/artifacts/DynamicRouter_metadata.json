@@ -1,0 +1,176 @@
+{
+	"compiler": {
+		"version": "0.8.23+commit.f704f362"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "module",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes4[]",
+								"name": "selectors",
+								"type": "bytes4[]"
+							}
+						],
+						"internalType": "struct DynamicRouterStorage.moduleDefinition[]",
+						"name": "modules",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"name": "UnknownSelector",
+				"type": "error"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "MODULE_NAME",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MODULE_VERSION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"custom:version": "1.0.0",
+			"details": "Динамический маршрутизатор",
+			"errors": {
+				"UnknownSelector(bytes4)": [
+					{
+						"details": "Неизвестный селектор"
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "В конструктор необходимо передать данные по модулю UpdateProxy"
+				}
+			},
+			"stateVariables": {
+				"MODULE_NAME": {
+					"details": "Название модуля"
+				},
+				"MODULE_VERSION": {
+					"details": "Версия модуля"
+				}
+			},
+			"title": "DynamicRouter",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/modules/dynamicRouter/DynamicRouter.sol": "DynamicRouter"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"/contracts/free/FreeVersion.sol": {
+			"keccak256": "0x913bb58e1b64814aedf645390cb599dfb039e715df848e0d5096c740b754e859",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://9faf8732188eff71ca94ca7327a122bac72e7965846f49da5b36849d4e5c5121",
+				"dweb:/ipfs/QmYVyPu2LPmRG5QrtCPGoNwegDNt7k8rAShHsYs1SYiKCJ"
+			]
+		},
+		"/contracts/modules/IModule.sol": {
+			"keccak256": "0x117ed7288ac6edb54b173aeb67b737f393c7d27b644ccbcd311d59f3d79d9864",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://2afe56cba202dac70804b96dc26ac717c3d0aec920f7d84f1ede00c736c12ad8",
+				"dweb:/ipfs/QmX23n4igbpkWj7BC2U46KbreM3VPx8j9g4aUenAumuTST"
+			]
+		},
+		"/contracts/storage/LibDynamicRouterStorage.sol": {
+			"keccak256": "0xfd6c004d1d1d29f60d09daf5f167715890a7dcf0d5fe242e602cc2040c3db8a0",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://bddf0ac0035b202ad8429a10b7fee816d82b0e63436a092370225b5ae595d12f",
+				"dweb:/ipfs/QmXL1SPyi4zUg2hNtfVmuag7X5etmvEukjEpF9wZ8fL2wE"
+			]
+		},
+		"/contracts/storage/LibOwnableStorage.sol": {
+			"keccak256": "0xbeb030b991fbd2f5674b229107dd88a88fabc4605716511911e65a6bff677ed3",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://b71ea759f699c2bc13afbb596a01c3d42b70be33c76898290e27fd9dc67b67c6",
+				"dweb:/ipfs/QmXtx9Hv9Nw6m3cnAaL7dHcsd2tFWuBPLr6iMpaxKTF59k"
+			]
+		},
+		"contracts/modules/dynamicRouter/DynamicRouter.sol": {
+			"keccak256": "0x2d6876084ad947ad4f1b741a91ee516a2e102b6686fbf10596dfcd44afe9a055",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://1f17a4ad3a0b889e0d706a71e6a2bbefeb90cd58bc776b3bf59ca964d627018b",
+				"dweb:/ipfs/QmdgZVjNyex4qVAjEDmouGDdwdTZXvgJJ2RmLX5fxQf9TJ"
+			]
+		},
+		"contracts/modules/dynamicRouter/IDynamicRouter.sol": {
+			"keccak256": "0x378fa7a24a838c25616814c4192e7fa24f426230ac44374ec663d9d807fe877a",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://c222bc83506edae0ce41895df4b21b6d8718f65b9b4a0bcb2e90821d2b3e4337",
+				"dweb:/ipfs/QmSH6Wg1wCmR4wwFsZRfxQiL2g7nTYizi7Kv6k1dwWBKQT"
+			]
+		}
+	},
+	"version": 1
+}

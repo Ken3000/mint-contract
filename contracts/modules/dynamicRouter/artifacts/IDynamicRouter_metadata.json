@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.23+commit.f704f362"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"name": "UnknownSelector",
+				"type": "error"
+			}
+		],
+		"devdoc": {
+			"details": "Интерфейс динамического маршрутизатора",
+			"errors": {
+				"UnknownSelector(bytes4)": [
+					{
+						"details": "Неизвестный селектор"
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/modules/dynamicRouter/IDynamicRouter.sol": "IDynamicRouter"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/modules/dynamicRouter/IDynamicRouter.sol": {
+			"keccak256": "0x378fa7a24a838c25616814c4192e7fa24f426230ac44374ec663d9d807fe877a",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://c222bc83506edae0ce41895df4b21b6d8718f65b9b4a0bcb2e90821d2b3e4337",
+				"dweb:/ipfs/QmSH6Wg1wCmR4wwFsZRfxQiL2g7nTYizi7Kv6k1dwWBKQT"
+			]
+		}
+	},
+	"version": 1
+}

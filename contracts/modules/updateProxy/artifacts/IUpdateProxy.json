@@ -1,0 +1,176 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"getImpl()": "dfb80831",
+			"getModuleBySelector(bytes4)": "63de14fc",
+			"getModules()": "b2494df3",
+			"getSelectors()": "4b503f0b",
+			"getSelectorsByImpl(address)": "0abe1796",
+			"updateModules((address,bytes4[])[])": "9f889b6e"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"name": "getImpl",
+			"outputs": [
+				{
+					"internalType": "address[]",
+					"name": "_allImpl",
+					"type": "address[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes4",
+					"name": "_selector",
+					"type": "bytes4"
+				}
+			],
+			"name": "getModuleBySelector",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "_imp",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getModules",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "bytes4",
+							"name": "selector",
+							"type": "bytes4"
+						},
+						{
+							"internalType": "address",
+							"name": "module",
+							"type": "address"
+						}
+					],
+					"internalType": "struct IUpdateProxy.modules[]",
+					"name": "_modules",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "getSelectors",
+			"outputs": [
+				{
+					"internalType": "bytes4[]",
+					"name": "",
+					"type": "bytes4[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_impl",
+					"type": "address"
+				}
+			],
+			"name": "getSelectorsByImpl",
+			"outputs": [
+				{
+					"internalType": "bytes4[]",
+					"name": "_selectors",
+					"type": "bytes4[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "module",
+							"type": "address"
+						},
+						{
+							"internalType": "bytes4[]",
+							"name": "selectors",
+							"type": "bytes4[]"
+						}
+					],
+					"internalType": "struct DynamicRouterStorage.moduleDefinition[]",
+					"name": "_modules",
+					"type": "tuple[]"
+				}
+			],
+			"name": "updateModules",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

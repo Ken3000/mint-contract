@@ -1,0 +1,89 @@
+{
+	"compiler": {
+		"version": "0.8.23+commit.f704f362"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "initSMEambStorage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"custom:version": "1.0.0",
+			"details": "Модуль NFT амбассадоров клуба SoulMate Ambassador Club",
+			"kind": "dev",
+			"methods": {},
+			"title": "SMEamb",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Первая стадия минта GENESIS*",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/init.sol": "init"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 32000
+		},
+		"remappings": []
+	},
+	"sources": {
+		"/contracts/mixins/Ownable.sol": {
+			"keccak256": "0xcb420249fb19379f32bb2571c7bf2aaa8d41f06c42c1bf4f7ca9c4547f6615f2",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://44f7b6bd8ea335001732fc6f05bcc80462f1d8125f774d0b13498e758bff05bd",
+				"dweb:/ipfs/QmXMA19mvm353Fit5AP7MMKAzees9ev2vtGSHx6hWNjG5V"
+			]
+		},
+		"/contracts/storage/LibSMEambStorage.sol": {
+			"keccak256": "0xac99ad3651ef7b466a122e3e83aefa26ecab482fc1f764d3a3cb2eb6aeb0146b",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://e43599e1f2745800d9d4c728fa49c002c6d52873652c3cf6ab458a58d93dacb3",
+				"dweb:/ipfs/QmPbpdRC1kWv45nRbkLjWMpToypxdypUMgvyPKrRShRNYW"
+			]
+		},
+		"contracts/init.sol": {
+			"keccak256": "0xcb7ec92cba83acff17a5dcc529aabd9e87a9607a78ffa3070a01df6fb78ecca6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4b95aa53afd526873862ebda6a448905aa2e50e81127a06ad01d5e6d25871ea1",
+				"dweb:/ipfs/Qma82MGogb7xwaUX9LHUwz9983QrcZhhZ59EFnaHWpda5r"
+			]
+		},
+		"contracts/lib/@openzeppelin/contracts/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"contracts/storage/LibOwnableStorage.sol": {
+			"keccak256": "0xbeb030b991fbd2f5674b229107dd88a88fabc4605716511911e65a6bff677ed3",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://b71ea759f699c2bc13afbb596a01c3d42b70be33c76898290e27fd9dc67b67c6",
+				"dweb:/ipfs/QmXtx9Hv9Nw6m3cnAaL7dHcsd2tFWuBPLr6iMpaxKTF59k"
+			]
+		}
+	},
+	"version": 1
+}

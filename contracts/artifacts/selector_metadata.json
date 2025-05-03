@@ -1,0 +1,93 @@
+{
+	"compiler": {
+		"version": "0.8.23+commit.f704f362"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_signature",
+						"type": "string"
+					}
+				],
+				"name": "selectorFunction",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_signature",
+						"type": "string"
+					}
+				],
+				"name": "selectorStorage",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "ACTPOHABT denis.aka.wolf@gmail.com",
+			"details": "Все pure function экосистемы       При достижении размера более 24577 байта разбить на части",
+			"kind": "dev",
+			"methods": {
+				"selectorFunction(string)": {
+					"details": "возвращает селектор функции по сигнатуре"
+				},
+				"selectorStorage(string)": {
+					"details": "возвращает селектор хранилища по сигнатуре"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/selector.sol": "selector"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/selector.sol": {
+			"keccak256": "0x8d3a76a29b3aefb1d016d2eac801c3f65fc68bececa36fa2cf237a9152b16024",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://43b1dde75a48ed506903741e0a16cfd792c155ae1a70439ae445c099f87e1c5e",
+				"dweb:/ipfs/Qmew6GbuijTS4w6P6AetZ9JPeh6TspRipCZWBRfDhobrJ7"
+			]
+		}
+	},
+	"version": 1
+}
