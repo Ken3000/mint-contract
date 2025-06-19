@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.23+commit.f704f362"
+		"version": "0.8.30+commit.73712a01"
 	},
 	"language": "Solidity",
 	"output": {
@@ -24,7 +24,7 @@
 		"compilationTarget": {
 			"contracts/mixins/Ownable.sol": "Ownable"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -45,19 +45,19 @@
 			]
 		},
 		"contracts/mixins/Ownable.sol": {
-			"keccak256": "0x2e65c48323cec5462e6dbc5cbcb5fc3c5b125af0e67599740cad936955ce7a70",
+			"keccak256": "0xc23fe327a04f4c62e10abc5a81fc924ea80ce38c22f1721d5b1162bb0e2f870c",
 			"license": "CC0",
 			"urls": [
-				"bzz-raw://26d30994dc70d022c0b99f1a24b424affcfe06de4de46d28bc9e4838a05bbc01",
-				"dweb:/ipfs/QmZtKN1dH19xF87XH9VUePNUmRjnHceRvTrBWxwtXSKW1c"
+				"bzz-raw://7d521bfaae130e96f56de671f850f7285e44e5fb360ad0531bd74fe476c380ec",
+				"dweb:/ipfs/QmYRNGwEuBZxmS1xGCDH8pM1r7P6bPMZ9shEFYx7TA4igd"
 			]
 		},
 		"contracts/storage/LibOwnableStorage.sol": {
-			"keccak256": "0xbeb030b991fbd2f5674b229107dd88a88fabc4605716511911e65a6bff677ed3",
+			"keccak256": "0xa6163a0e493a2bda74fb2013f6affe407bf1c43970d53280a4c2aa722bdfedb2",
 			"license": "CC0",
 			"urls": [
-				"bzz-raw://b71ea759f699c2bc13afbb596a01c3d42b70be33c76898290e27fd9dc67b67c6",
-				"dweb:/ipfs/QmXtx9Hv9Nw6m3cnAaL7dHcsd2tFWuBPLr6iMpaxKTF59k"
+				"bzz-raw://04c98c67c41f4190985688409cf62925436ef19138edbcf47430c8426555250f",
+				"dweb:/ipfs/QmTsSWRobibgVAPJuBC7hDJn8yLLotBEa7sjkSgg7pMtNN"
 			]
 		}
 	},

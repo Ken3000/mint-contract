@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.23;
 
 import ".deps/npm/erc721a/contracts/ERC721A.sol";
 //import "/contracts/mixins/ERC721A.sol";

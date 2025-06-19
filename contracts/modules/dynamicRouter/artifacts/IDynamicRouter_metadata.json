@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.23+commit.f704f362"
+		"version": "0.8.30+commit.73712a01"
 	},
 	"language": "Solidity",
 	"output": {
@@ -40,7 +40,7 @@
 		"compilationTarget": {
 			"contracts/modules/dynamicRouter/IDynamicRouter.sol": "IDynamicRouter"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -53,11 +53,11 @@
 	},
 	"sources": {
 		"contracts/modules/dynamicRouter/IDynamicRouter.sol": {
-			"keccak256": "0x378fa7a24a838c25616814c4192e7fa24f426230ac44374ec663d9d807fe877a",
+			"keccak256": "0x3354c311c9f0e0a86e17ce0bad2d0964704daa5e8be4320b2219e722d605d0f7",
 			"license": "CC0",
 			"urls": [
-				"bzz-raw://c222bc83506edae0ce41895df4b21b6d8718f65b9b4a0bcb2e90821d2b3e4337",
-				"dweb:/ipfs/QmSH6Wg1wCmR4wwFsZRfxQiL2g7nTYizi7Kv6k1dwWBKQT"
+				"bzz-raw://58145c818aa4b6fd36199038e38406502200c861faf2683118966ed45a63b4f7",
+				"dweb:/ipfs/QmTMPMTBFWdCh71yGTZV4f1tMdeLtTiUfhgS2oGRCWWqii"
 			]
 		}
 	},

@@ -1,0 +1,81 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "MODULE_NAME",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MODULE_VERSION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "version",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "ACTPOHABT denis.aka.wolf@gmail.com",
+			"details": "Базовый интерфейс для определения модуля",
+			"kind": "dev",
+			"methods": {
+				"MODULE_NAME()": {
+					"details": "Имя модуля"
+				},
+				"MODULE_VERSION()": {
+					"details": "Версия модуля"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/modules/IModule.sol": "IModule"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/modules/IModule.sol": {
+			"keccak256": "0xc984c9ddcaf03f313864863d320b027872f0f5ebf1d6c6b6ba5ee3d02d2d0a3c",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://72d457dd3d175def23e82e46f3e9b58fc5f6e5065cc2ec76edce69f5cd5b1865",
+				"dweb:/ipfs/QmbmKRZ29DoFi2h5xiBa7C1S7aotCdzzikHCsVVJoydtRv"
+			]
+		}
+	},
+	"version": 1
+}

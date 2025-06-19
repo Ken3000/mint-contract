@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.23+commit.f704f362"
+		"version": "0.8.30+commit.73712a01"
 	},
 	"language": "Solidity",
 	"output": {
@@ -155,7 +155,7 @@
 		"compilationTarget": {
 			"contracts/modules/updateProxy/IUpdateProxy.sol": "IUpdateProxy"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -168,19 +168,19 @@
 	},
 	"sources": {
 		"/contracts/storage/LibDynamicRouterStorage.sol": {
-			"keccak256": "0xfd6c004d1d1d29f60d09daf5f167715890a7dcf0d5fe242e602cc2040c3db8a0",
+			"keccak256": "0xb8d831b5f05fdb365322fbbd058d60fda75c6f391055817e2cf68a51e6443659",
 			"license": "CC0",
 			"urls": [
-				"bzz-raw://bddf0ac0035b202ad8429a10b7fee816d82b0e63436a092370225b5ae595d12f",
-				"dweb:/ipfs/QmXL1SPyi4zUg2hNtfVmuag7X5etmvEukjEpF9wZ8fL2wE"
+				"bzz-raw://2906085bcbbc2d41da14d84ffbfad89718036199c555e541399b58d5cc38c0a3",
+				"dweb:/ipfs/QmUgwWrtwSqypp7JVrY6PiuAN6nEKjKozd57tR34EdVXQ5"
 			]
 		},
 		"contracts/modules/updateProxy/IUpdateProxy.sol": {
-			"keccak256": "0x81f8cecf82d1e6e85afe8085e472edbbe73da15e38469276f9a6b384a90ac584",
+			"keccak256": "0xc38c955c3c55757afbf93ee90804689258fd542e2e134eb48f172a12f6a8dd6b",
 			"license": "CC0",
 			"urls": [
-				"bzz-raw://3425adf2f5ea1b30cfdf278b43452b4c7a6c1fad73bb885fd584b27890491245",
-				"dweb:/ipfs/QmcJ4BmD46psRoS5Z5vMNfaB454zTtkJA29PQsRRcd86HY"
+				"bzz-raw://c9e43581779c29e01bdba1450e06759143aeeb8cb03993ed4f9f9a4ad2f94361",
+				"dweb:/ipfs/QmYxpL5RX1bR9yZPq9GNp6SemxofHqzwRWnipt3ng8aAUD"
 			]
 		}
 	},

@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.23+commit.f704f362"
+		"version": "0.8.30+commit.73712a01"
 	},
 	"language": "Solidity",
 	"output": {
@@ -84,7 +84,7 @@
 		],
 		"devdoc": {
 			"custom:version": "1.0.0",
-			"details": "Логику смотри в модуле SMEamb",
+			"details": "Логику смотри в модуле Ownable",
 			"events": {
 				"SeTimestampExp()": {
 					"details": "Установлено новое значение timestampExp"
@@ -128,32 +128,32 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {},
-			"notice": "Библиотека хранилища амбассадорки*",
+			"notice": "Библиотека хранилища миксина Ownable*",
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/storage/LibSMEamb.sol": "OwnableStorage"
+			"contracts/storage/LibOwnableStorage.sol": "OwnableStorage"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": true,
-			"runs": 32000
+			"enabled": false,
+			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"contracts/storage/LibSMEamb.sol": {
-			"keccak256": "0x8ef8853e937013e15fcdcb1e789ddcd64a1723c899ebd20de73628c9ce7bb48f",
+		"contracts/storage/LibOwnableStorage.sol": {
+			"keccak256": "0xa6163a0e493a2bda74fb2013f6affe407bf1c43970d53280a4c2aa722bdfedb2",
 			"license": "CC0",
 			"urls": [
-				"bzz-raw://6729174060b4401a2eb6df31a064b928d52b7536ea43fc6463f283959f47de6f",
-				"dweb:/ipfs/Qmcttg9YKFfZem4Ue6EQwP75di3hvfdXYbKp8eceQSx55Y"
+				"bzz-raw://04c98c67c41f4190985688409cf62925436ef19138edbcf47430c8426555250f",
+				"dweb:/ipfs/QmTsSWRobibgVAPJuBC7hDJn8yLLotBEa7sjkSgg7pMtNN"
 			]
 		}
 	},

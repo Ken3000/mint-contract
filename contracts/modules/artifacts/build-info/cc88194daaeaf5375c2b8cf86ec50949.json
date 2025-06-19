@@ -1,0 +1,316 @@
+{
+	"id": "cc88194daaeaf5375c2b8cf86ec50949",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.30",
+	"solcLongVersion": "0.8.30+commit.73712a01",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/modules/IModule.sol": {
+				"content": "// SPDX-License-Identifier: CC0\r\npragma solidity = 0.8.19 || 0.8.20 || 0.8.23 || 0.8.30;\r\n\r\n/**\r\n* @author ACTPOHABT denis.aka.wolf@gmail.com\r\n*\r\n* @dev Базовый интерфейс для определения модуля\r\n*/\r\ninterface IModule {\r\n\r\n    // solhint-disable func-name-mixedcase\r\n\r\n    /// @dev Имя модуля\r\n    function MODULE_NAME() external view returns (string memory name);\r\n\r\n    /// @dev Версия модуля\r\n    function MODULE_VERSION() external view returns (uint256 version);\r\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": [],
+			"evmVersion": "cancun"
+		}
+	},
+	"output": {
+		"contracts": {
+			"contracts/modules/IModule.sol": {
+				"IModule": {
+					"abi": [
+						{
+							"inputs": [],
+							"name": "MODULE_NAME",
+							"outputs": [
+								{
+									"internalType": "string",
+									"name": "name",
+									"type": "string"
+								}
+							],
+							"stateMutability": "view",
+							"type": "function"
+						},
+						{
+							"inputs": [],
+							"name": "MODULE_VERSION",
+							"outputs": [
+								{
+									"internalType": "uint256",
+									"name": "version",
+									"type": "uint256"
+								}
+							],
+							"stateMutability": "view",
+							"type": "function"
+						}
+					],
+					"devdoc": {
+						"author": "ACTPOHABT denis.aka.wolf@gmail.com",
+						"details": "Базовый интерфейс для определения модуля",
+						"kind": "dev",
+						"methods": {
+							"MODULE_NAME()": {
+								"details": "Имя модуля"
+							},
+							"MODULE_VERSION()": {
+								"details": "Версия модуля"
+							}
+						},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"gasEstimates": null,
+						"legacyAssembly": null,
+						"methodIdentifiers": {
+							"MODULE_NAME()": "9b865b43",
+							"MODULE_VERSION()": "81ed9808"
+						}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.30+commit.73712a01\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"MODULE_NAME\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MODULE_VERSION\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"version\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"ACTPOHABT denis.aka.wolf@gmail.com\",\"details\":\"\\u0411\\u0430\\u0437\\u043e\\u0432\\u044b\\u0439 \\u0438\\u043d\\u0442\\u0435\\u0440\\u0444\\u0435\\u0439\\u0441 \\u0434\\u043b\\u044f \\u043e\\u043f\\u0440\\u0435\\u0434\\u0435\\u043b\\u0435\\u043d\\u0438\\u044f \\u043c\\u043e\\u0434\\u0443\\u043b\\u044f\",\"kind\":\"dev\",\"methods\":{\"MODULE_NAME()\":{\"details\":\"\\u0418\\u043c\\u044f \\u043c\\u043e\\u0434\\u0443\\u043b\\u044f\"},\"MODULE_VERSION()\":{\"details\":\"\\u0412\\u0435\\u0440\\u0441\\u0438\\u044f \\u043c\\u043e\\u0434\\u0443\\u043b\\u044f\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/modules/IModule.sol\":\"IModule\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/modules/IModule.sol\":{\"keccak256\":\"0xc984c9ddcaf03f313864863d320b027872f0f5ebf1d6c6b6ba5ee3d02d2d0a3c\",\"license\":\"CC0\",\"urls\":[\"bzz-raw://72d457dd3d175def23e82e46f3e9b58fc5f6e5065cc2ec76edce69f5cd5b1865\",\"dweb:/ipfs/QmbmKRZ29DoFi2h5xiBa7C1S7aotCdzzikHCsVVJoydtRv\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"contracts/modules/IModule.sol": {
+				"ast": {
+					"absolutePath": "contracts/modules/IModule.sol",
+					"exportedSymbols": {
+						"IModule": [
+							15
+						]
+					},
+					"id": 16,
+					"license": "CC0",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"=",
+								"0.8",
+								".19",
+								"||",
+								"0.8",
+								".20",
+								"||",
+								"0.8",
+								".23",
+								"||",
+								"0.8",
+								".30"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "33:55:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "IModule",
+							"contractDependencies": [],
+							"contractKind": "interface",
+							"documentation": {
+								"id": 2,
+								"nodeType": "StructuredDocumentation",
+								"src": "92:141:0",
+								"text": " @author ACTPOHABT denis.aka.wolf@gmail.com\n @dev Базовый интерфейс для определения модуля"
+							},
+							"fullyImplemented": false,
+							"id": 15,
+							"linearizedBaseContracts": [
+								15
+							],
+							"name": "IModule",
+							"nameLocation": "245:7:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"documentation": {
+										"id": 3,
+										"nodeType": "StructuredDocumentation",
+										"src": "308:28:0",
+										"text": "@dev Имя модуля"
+									},
+									"functionSelector": "9b865b43",
+									"id": 8,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "MODULE_NAME",
+									"nameLocation": "351:11:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 4,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "362:2:0"
+									},
+									"returnParameters": {
+										"id": 7,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 6,
+												"mutability": "mutable",
+												"name": "name",
+												"nameLocation": "402:4:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 8,
+												"src": "388:18:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_string_memory_ptr",
+													"typeString": "string"
+												},
+												"typeName": {
+													"id": 5,
+													"name": "string",
+													"nodeType": "ElementaryTypeName",
+													"src": "388:6:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_string_storage_ptr",
+														"typeString": "string"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "387:20:0"
+									},
+									"scope": 15,
+									"src": "342:66:0",
+									"stateMutability": "view",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"documentation": {
+										"id": 9,
+										"nodeType": "StructuredDocumentation",
+										"src": "416:34:0",
+										"text": "@dev Версия модуля"
+									},
+									"functionSelector": "81ed9808",
+									"id": 14,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "MODULE_VERSION",
+									"nameLocation": "465:14:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 10,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "479:2:0"
+									},
+									"returnParameters": {
+										"id": 13,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 12,
+												"mutability": "mutable",
+												"name": "version",
+												"nameLocation": "513:7:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 14,
+												"src": "505:15:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 11,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "505:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "504:17:0"
+									},
+									"scope": 15,
+									"src": "456:66:0",
+									"stateMutability": "view",
+									"virtual": false,
+									"visibility": "external"
+								}
+							],
+							"scope": 16,
+							"src": "235:290:0",
+							"usedErrors": [],
+							"usedEvents": []
+						}
+					],
+					"src": "33:492:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

@@ -1,0 +1,110 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "bitmap",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getBitmap",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "bitmap",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "value",
+						"type": "bool"
+					}
+				],
+				"name": "setBitmap",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"custom:version": "1.0.0",
+			"details": "Используется другими библиотеками",
+			"kind": "dev",
+			"methods": {
+				"getBitmap(uint256,uint256)": {
+					"details": "получает значение по индексу"
+				},
+				"setBitmap(uint256,uint256,bool)": {
+					"details": "устанавливает бит в слоте по индексу"
+				}
+			},
+			"title": "LibStorage",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Общие функции работы с хранилищем*",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/storage/LibStorage.sol": "LibStorage"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/storage/LibStorage.sol": {
+			"keccak256": "0xfc1117a2aa4ad7194eb84a989dc7a2e9a24c082a8d5e259a0eb7b4c092d298cf",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://c1503d6cfa3f7812634b6543c5925f4fb771e70dce4d426b578c62078e58c2c0",
+				"dweb:/ipfs/QmbUhPkg6cdPCvPYqY1MAmDq5Wuuaxtgt9KhNpNyFHVprW"
+			]
+		}
+	},
+	"version": 1
+}
