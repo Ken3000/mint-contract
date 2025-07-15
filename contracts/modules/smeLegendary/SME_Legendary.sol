@@ -140,8 +140,8 @@ contract SME_Legendary is ERC721L, Ownable, ReentrancyGuard, IERC721Receiver, IM
     /// @dev Минт для Легенлари - передает proof для проверки
     function legendaryMint(address to, bytes32[] calldata proof) external payable nonReentrant {
         uint256 _tokenId = _nextTokenId();
-        require( _tokenId > MAX_SUPPLY_GENESIS, "Error alloc - id from genesis");
-        require( _tokenId < MAX_SUPPLY_LEGEND, "Exceed alloc");
+        require( _tokenId > MAX_SUPPLY_GENESIS, "Error alloc - ID from Genesis NFT");
+        require( _tokenId < MAX_SUPPLY_LEGEND, "Exceed alloc - max count Legendary NFT");
         require(SMElegendaryStorage.guaranteed_minted(to) == false, "Already minted");
         require(msg.value == SMElegendaryStorage.fee(), "Not match price");
         bytes32 leaf = keccak256(abi.encodePacked(to));
@@ -265,9 +265,9 @@ contract SME_Legendary is ERC721L, Ownable, ReentrancyGuard, IERC721Receiver, IM
     
     /// @dev Инициализация для роутера
     function _init(string memory name, string memory symbol) private{
-        SMElegendaryStorage.baseTokenURI("https://ipfs.sweb.ru/ipfs/QmbpN9qexgznkpTEQmrdxnSfWYCDAbLkBxm5vAC71jzRxo/");
-        SMElegendaryStorage.defaultTokenURI("https://ipfs.sweb.ru/ipfs/QmYRbSM2QazGb5QHogodqJfoPVaSib32ttUpvNkyJKfhXU/?filename=smeamb.json");
-        SMElegendaryStorage.legendlistRoot(0xdfb96c060b2e58f09345a394fd8e994a6e7ac3539cdd256304c6e181a216752e);
+        SMElegendaryStorage.baseTokenURI("https://ipfs.sweb.ru/ipns/soulmate.partners/Legendary/json/");
+        SMElegendaryStorage.defaultTokenURI("https://ipfs.sweb.ru/ipns/soulmate.partners/Legendary/json/1200.json");
+        SMElegendaryStorage.legendlistRoot(0x5df84626bc45c33115b89a190996d30024345c231b20f226b126a006264fd61f);
         SMElegendaryStorage.fee(145); 
         SMElegendaryStorage.name(name);
         SMElegendaryStorage.symbol(symbol);
