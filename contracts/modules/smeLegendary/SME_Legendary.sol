@@ -15,17 +15,17 @@ import "/contracts/modules/IModule.sol";
 import "/contracts/free/FreeVersion.sol";
 
 /**
- * @title SME_Legendary
+ * @title SMELegendary
  * @custom:version 1.0.0
  * @dev Модуль NFT Легендари для SoulMate Partners
  * @notice Вторая стадия минта LEGENDARY
 **/
-contract SME_Legendary is ERC721L, Ownable, ReentrancyGuard, IERC721Receiver, IModule  {
+contract SMELegendary is ERC721L, Ownable, ReentrancyGuard, IERC721Receiver, IModule  {
     
     using Strings for uint256;
 
     /// @dev Название модуля
-    string public constant MODULE_NAME = "SME_Legendary";
+    string public constant MODULE_NAME = "SMELegendary";
     /// @dev Версия модуля
     uint256 public immutable MODULE_VERSION = _encodeVersion(1, 0, 0); 
 
@@ -140,8 +140,8 @@ contract SME_Legendary is ERC721L, Ownable, ReentrancyGuard, IERC721Receiver, IM
     /// @dev Минт для Легенлари - передает proof для проверки
     function legendaryMint(address to, bytes32[] calldata proof) external payable nonReentrant {
         uint256 _tokenId = _nextTokenId();
-        require( _tokenId > MAX_SUPPLY_GENESIS, "Error alloc - ID from Genesis NFT");
-        require( _tokenId < MAX_SUPPLY_LEGEND, "Exceed alloc - max count Legendary NFT");
+        require( _tokenId > MAX_SUPPLY_GENESIS, "Error alloc - id from genesis");
+        require( _tokenId < MAX_SUPPLY_LEGEND, "Exceed alloc");
         require(SMElegendaryStorage.guaranteed_minted(to) == false, "Already minted");
         require(msg.value == SMElegendaryStorage.fee(), "Not match price");
         bytes32 leaf = keccak256(abi.encodePacked(to));
