@@ -1032,7 +1032,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/modules/smeLegendary/SME_Legendary.sol": "SMELegendary"
+			"contracts/modules/smeLegendary/SMELegendary.sol": "SMELegendary"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -1142,7 +1142,7 @@
 				"dweb:/ipfs/QmVBEei6aTnvYNZp2CHYVNKyZS4q1KkjANfY39WVXZXVoT"
 			]
 		},
-		"contracts/modules/smeLegendary/SME_Legendary.sol": {
+		"contracts/modules/smeLegendary/SMELegendary.sol": {
 			"keccak256": "0xccf9848a7f75486fcb0c9f672d89303ef0a0a353fe9ee9261a481b716888dfe9",
 			"license": "MIT",
 			"urls": [
