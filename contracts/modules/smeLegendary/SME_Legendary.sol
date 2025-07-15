@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-import ".deps/npm/erc721a/contracts/ERC721A.sol";
-//import "/contracts/mixins/ERC721A.sol";
+import ".deps/npm/erc721l/contracts/ERC721L.sol";
+//import "/contracts/mixins/ERC721L.sol";
 
 import "contracts/lib/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 
@@ -15,17 +15,17 @@ import "/contracts/modules/IModule.sol";
 import "/contracts/free/FreeVersion.sol";
 
 /**
- * @title SME_Legandary
+ * @title SME_Legendary
  * @custom:version 1.0.0
  * @dev Модуль NFT Легендари для SoulMate Partners
  * @notice Вторая стадия минта LEGENDARY
 **/
-contract SME_Legandary is ERC721A, Ownable, ReentrancyGuard, IERC721Receiver, IModule  {
+contract SME_Legendary is ERC721L, Ownable, ReentrancyGuard, IERC721Receiver, IModule  {
     
     using Strings for uint256;
 
     /// @dev Название модуля
-    string public constant MODULE_NAME = "SME_Legandary";
+    string public constant MODULE_NAME = "SME_Legendary";
     /// @dev Версия модуля
     uint256 public immutable MODULE_VERSION = _encodeVersion(1, 0, 0); 
 
@@ -39,7 +39,7 @@ contract SME_Legandary is ERC721A, Ownable, ReentrancyGuard, IERC721Receiver, IM
     /// timely update the images and related attributes of the NFT.
     event MetadataUpdate(uint256 _tokenId);
 
-    constructor(string memory name, string memory symbol) ERC721A(name, symbol) {
+    constructor(string memory name, string memory symbol) ERC721L(name, symbol) {
         _initOwnable();
         _init(name, symbol);
     }
@@ -56,11 +56,11 @@ contract SME_Legandary is ERC721A, Ownable, ReentrancyGuard, IERC721Receiver, IM
     }
 
     function name() public view virtual override returns (string memory) {
-        return SMEambStorage.name();
+        return SMElegendaryStorage.name();
     }
     
     function symbol() public view virtual override returns (string memory) {
-        return SMEambStorage.symbol();
+        return SMElegendaryStorage.symbol();
     }
 
     function onERC721Received(address operator, address from, uint256 tokenId, bytes memory data) public override returns (bytes4) {
@@ -68,24 +68,24 @@ contract SME_Legandary is ERC721A, Ownable, ReentrancyGuard, IERC721Receiver, IM
     }
     
     function fee() public view returns(uint256){
-        return SMEambStorage.fee();
+        return SMElegendaryStorage.fee();
     }
 
     /// @dev Возвращает baseTokenURI
     function baseURI() public view returns (string memory) {
-        return SMEambStorage.baseTokenURI();
+        return SMElegendaryStorage.baseTokenURI();
     }
 
     /// @dev Returns the next token ID to be minted.
     function nextTokenId() public view returns (uint256) {
-        return SMEambStorage._currentIndex();
+        return SMElegendaryStorage._currentIndex();
     }
 
     /// @dev See {IERC721Metadata-tokenURI}.
     function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
         //_requireOwned(tokenId);
 
-        string memory _tokenURI = SMEambStorage.tokenURIs(tokenId);
+        string memory _tokenURI = SMElegendaryStorage.tokenURIs(tokenId);
         string memory base = _baseURI();
 
         // If there is no base URI, return the token URI.
@@ -103,35 +103,51 @@ contract SME_Legandary is ERC721A, Ownable, ReentrancyGuard, IERC721Receiver, IM
     /// @dev Возвращает идентификатор токена по индексу
     function balanceOfId(address owner, uint256 index) public view returns (uint256) {
         //if (owner == address(0)) _revert(BalanceQueryForZeroAddress.selector);
-        return SMEambStorage.ownedTokens(owner,index);
+        return SMElegendaryStorage.ownedTokens(owner,index);
     }
     
     function setFee(uint256 _fee) external onlyOwner {
-        SMEambStorage.fee(_fee);
+        SMElegendaryStorage.fee(_fee);
     }
 
     function setGenesislistRoot(bytes32 merkleroot) external onlyOwner {
-        SMEambStorage.genesislistRoot(merkleroot);
+        // SMElegendaryStorage.genesislistRoot(merkleroot);
     }
 
     function setLegendlistRoot(bytes32 merkleroot) external onlyOwner {
-        SMEambStorage.legendlistRoot(merkleroot);
+        SMElegendaryStorage.legendlistRoot(merkleroot);
     }
 
     function setEpiclistRoot(bytes32 merkleroot) external onlyOwner {
-        SMEambStorage.epiclistRoot(merkleroot);
+        SMElegendaryStorage.epiclistRoot(merkleroot);
     }
 
     /// @dev Минт для генезисов - передает proof для проверки
-    function genesisMint(address to, bytes32[] calldata proof) external payable nonReentrant {
+    // function genesisMint(address to, bytes32[] calldata proof) external payable nonReentrant {
+    //     uint256 _tokenId = _nextTokenId();
+    //     require( _tokenId < MAX_SUPPLY_GENESIS, "Exceed alloc");
+    //     require(SMElegendaryStorage.guaranteed_minted(to) == false, "Already minted");
+    //     require(msg.value == SMElegendaryStorage.fee(), "Not match price");
+    //     bytes32 leaf = keccak256(abi.encodePacked(to));
+    //     bool isValidLeaf = MerkleProof.verify(proof, SMElegendaryStorage.genesislistRoot(), leaf);
+    //     require(isValidLeaf == true, "Not in merkle");
+    //     SMElegendaryStorage.guaranteed_minted(to,true);
+    //     _safeMint(to, 1);
+    //     _setTokenURI(_tokenId, _tokenURI(_tokenId));
+    //     _updateOwner(address(0x0),to,_tokenId);
+    // }
+
+    /// @dev Минт для Легенлари - передает proof для проверки
+    function legendaryMint(address to, bytes32[] calldata proof) external payable nonReentrant {
         uint256 _tokenId = _nextTokenId();
-        require( _tokenId < MAX_SUPPLY_GENESIS, "Exceed alloc");
-        require(SMEambStorage.guaranteed_minted(to) == false, "Already minted");
-        require(msg.value == SMEambStorage.fee(), "Not match price");
+        require( _tokenId > MAX_SUPPLY_GENESIS, "Error alloc - id from genesis");
+        require( _tokenId < MAX_SUPPLY_LEGEND, "Exceed alloc");
+        require(SMElegendaryStorage.guaranteed_minted(to) == false, "Already minted");
+        require(msg.value == SMElegendaryStorage.fee(), "Not match price");
         bytes32 leaf = keccak256(abi.encodePacked(to));
-        bool isValidLeaf = MerkleProof.verify(proof, SMEambStorage.genesislistRoot(), leaf);
+        bool isValidLeaf = MerkleProof.verify(proof, SMElegendaryStorage.legendlistRoot(), leaf);
         require(isValidLeaf == true, "Not in merkle");
-        SMEambStorage.guaranteed_minted(to,true);
+        SMElegendaryStorage.guaranteed_minted(to,true);
         _safeMint(to, 1);
         _setTokenURI(_tokenId, _tokenURI(_tokenId));
         _updateOwner(address(0x0),to,_tokenId);
@@ -139,7 +155,7 @@ contract SME_Legandary is ERC721A, Ownable, ReentrancyGuard, IERC721Receiver, IM
 
     /// @dev Установка базового URI
     function setBaseURI(string calldata URI) external onlyOwner {
-        SMEambStorage.baseTokenURI(URI);
+        SMElegendaryStorage.baseTokenURI(URI);
     }
 
     /// @dev Установка URI для конкретного токена
@@ -149,7 +165,7 @@ contract SME_Legandary is ERC721A, Ownable, ReentrancyGuard, IERC721Receiver, IM
 
     /// @dev Устанавливает defaultTokenURI 
     function setDefaultTokenURI(string calldata URI) external onlyOwner {
-        SMEambStorage.defaultTokenURI(URI);
+        SMElegendaryStorage.defaultTokenURI(URI);
     }
 
     /// @dev withdraw
@@ -178,7 +194,7 @@ contract SME_Legandary is ERC721A, Ownable, ReentrancyGuard, IERC721Receiver, IM
      * Emits {MetadataUpdate}.
      */
     function _setTokenURI(uint256 tokenId, string memory _tokenURI) internal virtual {
-        SMEambStorage.tokenURIs(_tokenURI, tokenId);
+        SMElegendaryStorage.tokenURIs(_tokenURI, tokenId);
         emit MetadataUpdate(tokenId);
     }
 
@@ -205,7 +221,7 @@ contract SME_Legandary is ERC721A, Ownable, ReentrancyGuard, IERC721Receiver, IM
         require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
 
         string memory _baseURI = baseURI();
-        return bytes(_baseURI).length > 0 ? string(abi.encodePacked(_baseURI, tokenId.toString(),".json")) : SMEambStorage.defaultTokenURI();
+        return bytes(_baseURI).length > 0 ? string(abi.encodePacked(_baseURI, tokenId.toString(),".json")) : SMElegendaryStorage.defaultTokenURI();
     }
 
     /**
@@ -213,7 +229,7 @@ contract SME_Legandary is ERC721A, Ownable, ReentrancyGuard, IERC721Receiver, IM
      * @param tokenId uint256 идентификатор токена
      */
     function _addTokenToAllTokensEnumeration(uint256 tokenId) private {
-        SMEambStorage.addTokenToAllTokensEnumeration(tokenId);
+        SMElegendaryStorage.addTokenToAllTokensEnumeration(tokenId);
     }
 
     /**
@@ -225,7 +241,7 @@ contract SME_Legandary is ERC721A, Ownable, ReentrancyGuard, IERC721Receiver, IM
      * @param tokenId uint256 ID of the token to be removed from the tokens list of the given address
      */
     function _removeTokenFromOwnerEnumeration(address from, uint256 tokenId) private {
-        SMEambStorage.removeTokenFromOwnerEnumeration(from, tokenId,balanceOf(from));
+        SMElegendaryStorage.removeTokenFromOwnerEnumeration(from, tokenId,balanceOf(from));
     }
 
     /**
@@ -234,7 +250,7 @@ contract SME_Legandary is ERC721A, Ownable, ReentrancyGuard, IERC721Receiver, IM
      * @param tokenId uint256 ID of the token to be removed from the tokens list
      */
     function _removeTokenFromAllTokensEnumeration(uint256 tokenId) private {
-        SMEambStorage.removeTokenFromAllTokensEnumeration(tokenId);
+        SMElegendaryStorage.removeTokenFromAllTokensEnumeration(tokenId);
     }
 
 
@@ -244,18 +260,18 @@ contract SME_Legandary is ERC721A, Ownable, ReentrancyGuard, IERC721Receiver, IM
      * @param tokenId uint256 ID of the token to be added to the tokens list of the given address
      */
     function _addTokenToOwnerEnumeration(address to, uint256 tokenId) private {
-        SMEambStorage.addTokenToOwnerEnumeration(to, tokenId,balanceOf(to) - 1);
+        SMElegendaryStorage.addTokenToOwnerEnumeration(to, tokenId,balanceOf(to) - 1);
     }
     
     /// @dev Инициализация для роутера
     function _init(string memory name, string memory symbol) private{
-        SMEambStorage.baseTokenURI("https://ipfs.sweb.ru/ipfs/QmbpN9qexgznkpTEQmrdxnSfWYCDAbLkBxm5vAC71jzRxo/");
-        SMEambStorage.defaultTokenURI("https://ipfs.sweb.ru/ipfs/QmYRbSM2QazGb5QHogodqJfoPVaSib32ttUpvNkyJKfhXU/?filename=smeamb.json");
-        SMEambStorage.genesislistRoot(0xdfb96c060b2e58f09345a394fd8e994a6e7ac3539cdd256304c6e181a216752e);
-        SMEambStorage.fee(14500000000000000000); 
-        SMEambStorage.name(name);
-        SMEambStorage.symbol(symbol);
-        SMEambStorage._currentIndex(1);
-        SMEambStorage._startTokenId(1);
+        SMElegendaryStorage.baseTokenURI("https://ipfs.sweb.ru/ipfs/QmbpN9qexgznkpTEQmrdxnSfWYCDAbLkBxm5vAC71jzRxo/");
+        SMElegendaryStorage.defaultTokenURI("https://ipfs.sweb.ru/ipfs/QmYRbSM2QazGb5QHogodqJfoPVaSib32ttUpvNkyJKfhXU/?filename=smeamb.json");
+        SMElegendaryStorage.legendlistRoot(0xdfb96c060b2e58f09345a394fd8e994a6e7ac3539cdd256304c6e181a216752e);
+        SMElegendaryStorage.fee(145); 
+        SMElegendaryStorage.name(name);
+        SMElegendaryStorage.symbol(symbol);
+        SMElegendaryStorage._currentIndex(1200);
+        SMElegendaryStorage._startTokenId(1200);
     }
 }
