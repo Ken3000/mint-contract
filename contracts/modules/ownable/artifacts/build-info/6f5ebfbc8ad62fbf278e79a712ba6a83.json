@@ -1,0 +1,1211 @@
+{
+	"id": "6f5ebfbc8ad62fbf278e79a712ba6a83",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.30",
+	"solcLongVersion": "0.8.30+commit.73712a01",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/modules/ownable/IOwnable.sol": {
+				"content": "// SPDX-License-Identifier: CC0\r\npragma solidity = 0.8.19 || 0.8.20 || 0.8.23 || 0.8.30;\r\n\r\n/**\r\n* @dev Модуль управления владельцем\r\n*/\r\ninterface IOwnable {\r\n\r\n    /// @dev Пустой адрес\r\n    error EmptyAddress();\r\n    /// @dev Функцию использует на владелец\r\n    error AccessDenied(address); \r\n    /// @dev Время перехода прав новому владельцу завершено\r\n    error TimedOut(address); \r\n    //// @dev Слишком большое значени gracePeriod \r\n    error ValueTooHigh(uint); \r\n    \r\n    /// @dev Инициация передачи прав владения\r\n    event InitialTransferOwner(address indexed oldOwner, address indexed newOwner,  uint timestamp);\r\n    /// @dev Подтверждение передачи прав новым владельцем\r\n    event AcceptTransferNewOwner(address indexed _to,  uint _timestamp);\r\n    /// @dev Установлено новое значение грейс периода\r\n    event SetNewGracePeriod(address indexed _to,  uint _graceperiod);\r\n    \r\n    /// @dev Геттеры\r\n    function getGracePeriod()external view returns(uint);\r\n    function getOwner()external view returns(address);\r\n    function getNewOwner()external view returns(address);\r\n    function getTimestampExp()external view returns(uint);\r\n    \r\n    /// @dev установка грейс периода\r\n    function setGracePeriod(uint _seconds) external;\r\n\r\n    /// @dev инициализация передачи прав\r\n    function transferOwner(address _to) external ;\r\n\r\n    /// @dev подтверждение передачи прав новым владельцем\r\n    function transferNewOwnerAccept() external ;\r\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": [],
+			"evmVersion": "cancun"
+		}
+	},
+	"output": {
+		"contracts": {
+			"contracts/modules/ownable/IOwnable.sol": {
+				"IOwnable": {
+					"abi": [
+						{
+							"inputs": [
+								{
+									"internalType": "address",
+									"name": "",
+									"type": "address"
+								}
+							],
+							"name": "AccessDenied",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "EmptyAddress",
+							"type": "error"
+						},
+						{
+							"inputs": [
+								{
+									"internalType": "address",
+									"name": "",
+									"type": "address"
+								}
+							],
+							"name": "TimedOut",
+							"type": "error"
+						},
+						{
+							"inputs": [
+								{
+									"internalType": "uint256",
+									"name": "",
+									"type": "uint256"
+								}
+							],
+							"name": "ValueTooHigh",
+							"type": "error"
+						},
+						{
+							"anonymous": false,
+							"inputs": [
+								{
+									"indexed": true,
+									"internalType": "address",
+									"name": "_to",
+									"type": "address"
+								},
+								{
+									"indexed": false,
+									"internalType": "uint256",
+									"name": "_timestamp",
+									"type": "uint256"
+								}
+							],
+							"name": "AcceptTransferNewOwner",
+							"type": "event"
+						},
+						{
+							"anonymous": false,
+							"inputs": [
+								{
+									"indexed": true,
+									"internalType": "address",
+									"name": "oldOwner",
+									"type": "address"
+								},
+								{
+									"indexed": true,
+									"internalType": "address",
+									"name": "newOwner",
+									"type": "address"
+								},
+								{
+									"indexed": false,
+									"internalType": "uint256",
+									"name": "timestamp",
+									"type": "uint256"
+								}
+							],
+							"name": "InitialTransferOwner",
+							"type": "event"
+						},
+						{
+							"anonymous": false,
+							"inputs": [
+								{
+									"indexed": true,
+									"internalType": "address",
+									"name": "_to",
+									"type": "address"
+								},
+								{
+									"indexed": false,
+									"internalType": "uint256",
+									"name": "_graceperiod",
+									"type": "uint256"
+								}
+							],
+							"name": "SetNewGracePeriod",
+							"type": "event"
+						},
+						{
+							"inputs": [],
+							"name": "getGracePeriod",
+							"outputs": [
+								{
+									"internalType": "uint256",
+									"name": "",
+									"type": "uint256"
+								}
+							],
+							"stateMutability": "view",
+							"type": "function"
+						},
+						{
+							"inputs": [],
+							"name": "getNewOwner",
+							"outputs": [
+								{
+									"internalType": "address",
+									"name": "",
+									"type": "address"
+								}
+							],
+							"stateMutability": "view",
+							"type": "function"
+						},
+						{
+							"inputs": [],
+							"name": "getOwner",
+							"outputs": [
+								{
+									"internalType": "address",
+									"name": "",
+									"type": "address"
+								}
+							],
+							"stateMutability": "view",
+							"type": "function"
+						},
+						{
+							"inputs": [],
+							"name": "getTimestampExp",
+							"outputs": [
+								{
+									"internalType": "uint256",
+									"name": "",
+									"type": "uint256"
+								}
+							],
+							"stateMutability": "view",
+							"type": "function"
+						},
+						{
+							"inputs": [
+								{
+									"internalType": "uint256",
+									"name": "_seconds",
+									"type": "uint256"
+								}
+							],
+							"name": "setGracePeriod",
+							"outputs": [],
+							"stateMutability": "nonpayable",
+							"type": "function"
+						},
+						{
+							"inputs": [],
+							"name": "transferNewOwnerAccept",
+							"outputs": [],
+							"stateMutability": "nonpayable",
+							"type": "function"
+						},
+						{
+							"inputs": [
+								{
+									"internalType": "address",
+									"name": "_to",
+									"type": "address"
+								}
+							],
+							"name": "transferOwner",
+							"outputs": [],
+							"stateMutability": "nonpayable",
+							"type": "function"
+						}
+					],
+					"devdoc": {
+						"details": "Модуль управления владельцем",
+						"errors": {
+							"AccessDenied(address)": [
+								{
+									"details": "Функцию использует на владелец"
+								}
+							],
+							"EmptyAddress()": [
+								{
+									"details": "Пустой адрес"
+								}
+							],
+							"TimedOut(address)": [
+								{
+									"details": "Время перехода прав новому владельцу завершено"
+								}
+							]
+						},
+						"events": {
+							"AcceptTransferNewOwner(address,uint256)": {
+								"details": "Подтверждение передачи прав новым владельцем"
+							},
+							"InitialTransferOwner(address,address,uint256)": {
+								"details": "Инициация передачи прав владения"
+							},
+							"SetNewGracePeriod(address,uint256)": {
+								"details": "Установлено новое значение грейс периода"
+							}
+						},
+						"kind": "dev",
+						"methods": {
+							"getGracePeriod()": {
+								"details": "Геттеры"
+							},
+							"setGracePeriod(uint256)": {
+								"details": "установка грейс периода"
+							},
+							"transferNewOwnerAccept()": {
+								"details": "подтверждение передачи прав новым владельцем"
+							},
+							"transferOwner(address)": {
+								"details": "инициализация передачи прав"
+							}
+						},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"gasEstimates": null,
+						"legacyAssembly": null,
+						"methodIdentifiers": {
+							"getGracePeriod()": "dbd18388",
+							"getNewOwner()": "3e2fe149",
+							"getOwner()": "893d20e8",
+							"getTimestampExp()": "61a9ab76",
+							"setGracePeriod(uint256)": "f2f65960",
+							"transferNewOwnerAccept()": "18e3e87f",
+							"transferOwner(address)": "4fb2e45d"
+						}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.30+commit.73712a01\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"AccessDenied\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"EmptyAddress\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"TimedOut\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"ValueTooHigh\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_timestamp\",\"type\":\"uint256\"}],\"name\":\"AcceptTransferNewOwner\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"oldOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"InitialTransferOwner\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_graceperiod\",\"type\":\"uint256\"}],\"name\":\"SetNewGracePeriod\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"getGracePeriod\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getNewOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getTimestampExp\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_seconds\",\"type\":\"uint256\"}],\"name\":\"setGracePeriod\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"transferNewOwnerAccept\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"}],\"name\":\"transferOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"\\u041c\\u043e\\u0434\\u0443\\u043b\\u044c \\u0443\\u043f\\u0440\\u0430\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f \\u0432\\u043b\\u0430\\u0434\\u0435\\u043b\\u044c\\u0446\\u0435\\u043c\",\"errors\":{\"AccessDenied(address)\":[{\"details\":\"\\u0424\\u0443\\u043d\\u043a\\u0446\\u0438\\u044e \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442 \\u043d\\u0430 \\u0432\\u043b\\u0430\\u0434\\u0435\\u043b\\u0435\\u0446\"}],\"EmptyAddress()\":[{\"details\":\"\\u041f\\u0443\\u0441\\u0442\\u043e\\u0439 \\u0430\\u0434\\u0440\\u0435\\u0441\"}],\"TimedOut(address)\":[{\"details\":\"\\u0412\\u0440\\u0435\\u043c\\u044f \\u043f\\u0435\\u0440\\u0435\\u0445\\u043e\\u0434\\u0430 \\u043f\\u0440\\u0430\\u0432 \\u043d\\u043e\\u0432\\u043e\\u043c\\u0443 \\u0432\\u043b\\u0430\\u0434\\u0435\\u043b\\u044c\\u0446\\u0443 \\u0437\\u0430\\u0432\\u0435\\u0440\\u0448\\u0435\\u043d\\u043e\"}]},\"events\":{\"AcceptTransferNewOwner(address,uint256)\":{\"details\":\"\\u041f\\u043e\\u0434\\u0442\\u0432\\u0435\\u0440\\u0436\\u0434\\u0435\\u043d\\u0438\\u0435 \\u043f\\u0435\\u0440\\u0435\\u0434\\u0430\\u0447\\u0438 \\u043f\\u0440\\u0430\\u0432 \\u043d\\u043e\\u0432\\u044b\\u043c \\u0432\\u043b\\u0430\\u0434\\u0435\\u043b\\u044c\\u0446\\u0435\\u043c\"},\"InitialTransferOwner(address,address,uint256)\":{\"details\":\"\\u0418\\u043d\\u0438\\u0446\\u0438\\u0430\\u0446\\u0438\\u044f \\u043f\\u0435\\u0440\\u0435\\u0434\\u0430\\u0447\\u0438 \\u043f\\u0440\\u0430\\u0432 \\u0432\\u043b\\u0430\\u0434\\u0435\\u043d\\u0438\\u044f\"},\"SetNewGracePeriod(address,uint256)\":{\"details\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u043e\\u0432\\u043b\\u0435\\u043d\\u043e \\u043d\\u043e\\u0432\\u043e\\u0435 \\u0437\\u043d\\u0430\\u0447\\u0435\\u043d\\u0438\\u0435 \\u0433\\u0440\\u0435\\u0439\\u0441 \\u043f\\u0435\\u0440\\u0438\\u043e\\u0434\\u0430\"}},\"kind\":\"dev\",\"methods\":{\"getGracePeriod()\":{\"details\":\"\\u0413\\u0435\\u0442\\u0442\\u0435\\u0440\\u044b\"},\"setGracePeriod(uint256)\":{\"details\":\"\\u0443\\u0441\\u0442\\u0430\\u043d\\u043e\\u0432\\u043a\\u0430 \\u0433\\u0440\\u0435\\u0439\\u0441 \\u043f\\u0435\\u0440\\u0438\\u043e\\u0434\\u0430\"},\"transferNewOwnerAccept()\":{\"details\":\"\\u043f\\u043e\\u0434\\u0442\\u0432\\u0435\\u0440\\u0436\\u0434\\u0435\\u043d\\u0438\\u0435 \\u043f\\u0435\\u0440\\u0435\\u0434\\u0430\\u0447\\u0438 \\u043f\\u0440\\u0430\\u0432 \\u043d\\u043e\\u0432\\u044b\\u043c \\u0432\\u043b\\u0430\\u0434\\u0435\\u043b\\u044c\\u0446\\u0435\\u043c\"},\"transferOwner(address)\":{\"details\":\"\\u0438\\u043d\\u0438\\u0446\\u0438\\u0430\\u043b\\u0438\\u0437\\u0430\\u0446\\u0438\\u044f \\u043f\\u0435\\u0440\\u0435\\u0434\\u0430\\u0447\\u0438 \\u043f\\u0440\\u0430\\u0432\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/modules/ownable/IOwnable.sol\":\"IOwnable\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/modules/ownable/IOwnable.sol\":{\"keccak256\":\"0xeb6a4093f6ee30181a5a8305f9140b9e9c14f8a934a5e27edbbee5c75adb14a2\",\"license\":\"CC0\",\"urls\":[\"bzz-raw://9598fae929903c41838408a86a3e69def7334c696acdf7504e448997270762b7\",\"dweb:/ipfs/QmXnS7db5Rn7VgF7ChkqwkrvZNVqrW2VcZKF49kaC3Ex96\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"contracts/modules/ownable/IOwnable.sol": {
+				"ast": {
+					"absolutePath": "contracts/modules/ownable/IOwnable.sol",
+					"exportedSymbols": {
+						"IOwnable": [
+							80
+						]
+					},
+					"id": 81,
+					"license": "CC0",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"=",
+								"0.8",
+								".19",
+								"||",
+								"0.8",
+								".20",
+								"||",
+								"0.8",
+								".23",
+								"||",
+								"0.8",
+								".30"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "33:55:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "IOwnable",
+							"contractDependencies": [],
+							"contractKind": "interface",
+							"documentation": {
+								"id": 2,
+								"nodeType": "StructuredDocumentation",
+								"src": "92:70:0",
+								"text": " @dev Модуль управления владельцем"
+							},
+							"fullyImplemented": false,
+							"id": 80,
+							"linearizedBaseContracts": [
+								80
+							],
+							"name": "IOwnable",
+							"nameLocation": "174:8:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"documentation": {
+										"id": 3,
+										"nodeType": "StructuredDocumentation",
+										"src": "192:32:0",
+										"text": "@dev Пустой адрес"
+									},
+									"errorSelector": "7138356f",
+									"id": 5,
+									"name": "EmptyAddress",
+									"nameLocation": "236:12:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 4,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "248:2:0"
+									},
+									"src": "230:21:0"
+								},
+								{
+									"documentation": {
+										"id": 6,
+										"nodeType": "StructuredDocumentation",
+										"src": "257:66:0",
+										"text": "@dev Функцию использует на владелец"
+									},
+									"errorSelector": "0504a20d",
+									"id": 10,
+									"name": "AccessDenied",
+									"nameLocation": "335:12:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 9,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 8,
+												"mutability": "mutable",
+												"name": "",
+												"nameLocation": "-1:-1:-1",
+												"nodeType": "VariableDeclaration",
+												"scope": 10,
+												"src": "348:7:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 7,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "348:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "347:9:0"
+									},
+									"src": "329:28:0"
+								},
+								{
+									"documentation": {
+										"id": 11,
+										"nodeType": "StructuredDocumentation",
+										"src": "364:96:0",
+										"text": "@dev Время перехода прав новому владельцу завершено"
+									},
+									"errorSelector": "efabbdc6",
+									"id": 15,
+									"name": "TimedOut",
+									"nameLocation": "472:8:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 14,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 13,
+												"mutability": "mutable",
+												"name": "",
+												"nameLocation": "-1:-1:-1",
+												"nodeType": "VariableDeclaration",
+												"scope": 15,
+												"src": "481:7:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 12,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "481:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "480:9:0"
+									},
+									"src": "466:24:0"
+								},
+								{
+									"errorSelector": "a253bc70",
+									"id": 19,
+									"name": "ValueTooHigh",
+									"nameLocation": "576:12:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 18,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 17,
+												"mutability": "mutable",
+												"name": "",
+												"nameLocation": "-1:-1:-1",
+												"nodeType": "VariableDeclaration",
+												"scope": 19,
+												"src": "589:4:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 16,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "589:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "588:6:0"
+									},
+									"src": "570:25:0"
+								},
+								{
+									"anonymous": false,
+									"documentation": {
+										"id": 20,
+										"nodeType": "StructuredDocumentation",
+										"src": "608:70:0",
+										"text": "@dev Инициация передачи прав владения"
+									},
+									"eventSelector": "8dbb839c92a52a1b41b96c2376318a45b974066df935981e08419bd7a0ae1500",
+									"id": 28,
+									"name": "InitialTransferOwner",
+									"nameLocation": "690:20:0",
+									"nodeType": "EventDefinition",
+									"parameters": {
+										"id": 27,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 22,
+												"indexed": true,
+												"mutability": "mutable",
+												"name": "oldOwner",
+												"nameLocation": "727:8:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 28,
+												"src": "711:24:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 21,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "711:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 24,
+												"indexed": true,
+												"mutability": "mutable",
+												"name": "newOwner",
+												"nameLocation": "753:8:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 28,
+												"src": "737:24:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 23,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "737:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 26,
+												"indexed": false,
+												"mutability": "mutable",
+												"name": "timestamp",
+												"nameLocation": "769:9:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 28,
+												"src": "764:14:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 25,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "764:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "710:69:0"
+									},
+									"src": "684:96:0"
+								},
+								{
+									"anonymous": false,
+									"documentation": {
+										"id": 29,
+										"nodeType": "StructuredDocumentation",
+										"src": "786:93:0",
+										"text": "@dev Подтверждение передачи прав новым владельцем"
+									},
+									"eventSelector": "ba63841a7533a3a83852e6bd791045210d9e961d32ec380162bcd5d1d6fe1212",
+									"id": 35,
+									"name": "AcceptTransferNewOwner",
+									"nameLocation": "891:22:0",
+									"nodeType": "EventDefinition",
+									"parameters": {
+										"id": 34,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 31,
+												"indexed": true,
+												"mutability": "mutable",
+												"name": "_to",
+												"nameLocation": "930:3:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 35,
+												"src": "914:19:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 30,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "914:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 33,
+												"indexed": false,
+												"mutability": "mutable",
+												"name": "_timestamp",
+												"nameLocation": "941:10:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 35,
+												"src": "936:15:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 32,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "936:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "913:39:0"
+									},
+									"src": "885:68:0"
+								},
+								{
+									"anonymous": false,
+									"documentation": {
+										"id": 36,
+										"nodeType": "StructuredDocumentation",
+										"src": "959:85:0",
+										"text": "@dev Установлено новое значение грейс периода"
+									},
+									"eventSelector": "bb4e769c8bec1bf5b9cbb403afd41b6826b52ba0d1ad04b1d4a6f06eae96b563",
+									"id": 42,
+									"name": "SetNewGracePeriod",
+									"nameLocation": "1056:17:0",
+									"nodeType": "EventDefinition",
+									"parameters": {
+										"id": 41,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 38,
+												"indexed": true,
+												"mutability": "mutable",
+												"name": "_to",
+												"nameLocation": "1090:3:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 42,
+												"src": "1074:19:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 37,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "1074:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 40,
+												"indexed": false,
+												"mutability": "mutable",
+												"name": "_graceperiod",
+												"nameLocation": "1101:12:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 42,
+												"src": "1096:17:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 39,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "1096:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "1073:41:0"
+									},
+									"src": "1050:65:0"
+								},
+								{
+									"documentation": {
+										"id": 43,
+										"nodeType": "StructuredDocumentation",
+										"src": "1127:23:0",
+										"text": "@dev Геттеры"
+									},
+									"functionSelector": "dbd18388",
+									"id": 48,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "getGracePeriod",
+									"nameLocation": "1165:14:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 44,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1179:2:0"
+									},
+									"returnParameters": {
+										"id": 47,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 46,
+												"mutability": "mutable",
+												"name": "",
+												"nameLocation": "-1:-1:-1",
+												"nodeType": "VariableDeclaration",
+												"scope": 48,
+												"src": "1203:4:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 45,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "1203:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "1202:6:0"
+									},
+									"scope": 80,
+									"src": "1156:53:0",
+									"stateMutability": "view",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"functionSelector": "893d20e8",
+									"id": 53,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "getOwner",
+									"nameLocation": "1224:8:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 49,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1232:2:0"
+									},
+									"returnParameters": {
+										"id": 52,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 51,
+												"mutability": "mutable",
+												"name": "",
+												"nameLocation": "-1:-1:-1",
+												"nodeType": "VariableDeclaration",
+												"scope": 53,
+												"src": "1256:7:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 50,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "1256:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "1255:9:0"
+									},
+									"scope": 80,
+									"src": "1215:50:0",
+									"stateMutability": "view",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"functionSelector": "3e2fe149",
+									"id": 58,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "getNewOwner",
+									"nameLocation": "1280:11:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 54,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1291:2:0"
+									},
+									"returnParameters": {
+										"id": 57,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 56,
+												"mutability": "mutable",
+												"name": "",
+												"nameLocation": "-1:-1:-1",
+												"nodeType": "VariableDeclaration",
+												"scope": 58,
+												"src": "1315:7:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 55,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "1315:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "1314:9:0"
+									},
+									"scope": 80,
+									"src": "1271:53:0",
+									"stateMutability": "view",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"functionSelector": "61a9ab76",
+									"id": 63,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "getTimestampExp",
+									"nameLocation": "1339:15:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 59,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1354:2:0"
+									},
+									"returnParameters": {
+										"id": 62,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 61,
+												"mutability": "mutable",
+												"name": "",
+												"nameLocation": "-1:-1:-1",
+												"nodeType": "VariableDeclaration",
+												"scope": 63,
+												"src": "1378:4:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 60,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "1378:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "1377:6:0"
+									},
+									"scope": 80,
+									"src": "1330:54:0",
+									"stateMutability": "view",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"documentation": {
+										"id": 64,
+										"nodeType": "StructuredDocumentation",
+										"src": "1396:53:0",
+										"text": "@dev установка грейс периода"
+									},
+									"functionSelector": "f2f65960",
+									"id": 69,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "setGracePeriod",
+									"nameLocation": "1464:14:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 67,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 66,
+												"mutability": "mutable",
+												"name": "_seconds",
+												"nameLocation": "1484:8:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 69,
+												"src": "1479:13:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 65,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "1479:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "1478:15:0"
+									},
+									"returnParameters": {
+										"id": 68,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1502:0:0"
+									},
+									"scope": 80,
+									"src": "1455:48:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"documentation": {
+										"id": 70,
+										"nodeType": "StructuredDocumentation",
+										"src": "1511:61:0",
+										"text": "@dev инициализация передачи прав"
+									},
+									"functionSelector": "4fb2e45d",
+									"id": 75,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "transferOwner",
+									"nameLocation": "1587:13:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 73,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 72,
+												"mutability": "mutable",
+												"name": "_to",
+												"nameLocation": "1609:3:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 75,
+												"src": "1601:11:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 71,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "1601:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "1600:13:0"
+									},
+									"returnParameters": {
+										"id": 74,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1623:0:0"
+									},
+									"scope": 80,
+									"src": "1578:46:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"documentation": {
+										"id": 76,
+										"nodeType": "StructuredDocumentation",
+										"src": "1632:93:0",
+										"text": "@dev подтверждение передачи прав новым владельцем"
+									},
+									"functionSelector": "18e3e87f",
+									"id": 79,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "transferNewOwnerAccept",
+									"nameLocation": "1740:22:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 77,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1762:2:0"
+									},
+									"returnParameters": {
+										"id": 78,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1774:0:0"
+									},
+									"scope": 80,
+									"src": "1731:44:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "external"
+								}
+							],
+							"scope": 81,
+							"src": "164:1614:0",
+							"usedErrors": [
+								5,
+								10,
+								15,
+								19
+							],
+							"usedEvents": [
+								28,
+								35,
+								42
+							]
+						}
+					],
+					"src": "33:1745:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

@@ -1046,20 +1046,20 @@
 		"remappings": []
 	},
 	"sources": {
-		".deps/npm/erc721a/contracts/ERC721A.sol": {
-			"keccak256": "0x99bcfa7ebab6bde8c8783c061351b608c1633f1a0c51f22805383df5a129a065",
+		".deps/npm/erc721l/contracts/ERC721L.sol": {
+			"keccak256": "0x456ecfc65470334a5fd452c84abdb653110383b41dcee1b8a9bb99cf5dd2b184",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://211bb8a6705e3febea850d557fe273419fe59db816a6b2ed712cd192ccf2a942",
-				"dweb:/ipfs/Qmat5s3Sfb9xiTbJtgtuXhXcGMEsbD5nraUHaAPxYoQCti"
+				"bzz-raw://186b565d76e430609065d9ad29a63e037de4cdf763dd927be5c5df192a572dc5",
+				"dweb:/ipfs/QmTT96tNFXmgW5iQDpdjUUDD17ZMFXyZZbFhNQX3hwkBRc"
 			]
 		},
-		".deps/npm/erc721a/contracts/IERC721A.sol": {
-			"keccak256": "0xc9a2a00612e0d121aef3f716877ada17177d5b2d5a4c780d22cade46da2ff294",
+		".deps/npm/erc721l/contracts/IERC721L.sol": {
+			"keccak256": "0xac0136d048be74bb55757f4051a294b81d0c612309d917a8afbd5db56b1eebac",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1435542fc553d2fb9181191f126a1f97e2cc5570c2459c862f54ba415a22bf02",
-				"dweb:/ipfs/QmaQJ14ajkHgymY5TtoxHnpiN5u4TpwXCqKr2B6DM8SHkn"
+				"bzz-raw://f8135536d64653a29d0810fa8826b88d455a24596f9001104559006fdadedb9a",
+				"dweb:/ipfs/QmRKbW5d9TowDkFAa7ybUhfBdMPnhdUTAUABLuhdRuNjuQ"
 			]
 		},
 		"/contracts/free/FreeVersion.sol": {
@@ -1143,11 +1143,11 @@
 			]
 		},
 		"contracts/modules/smeLegendary/SME_Legendary.sol": {
-			"keccak256": "0x1c027fc039f51e1a172a09adb35aaff72e59f0c9ac6a57189b51e079d8397b7c",
+			"keccak256": "0x0f19ae40c77d110e9668b2666bf128fff6ad7425ac473a1266d2e60f16cfd3b5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://12556dff6ef4cb4b3c4054464a5679eccef47816d2bcf86324b7132abbbdf168",
-				"dweb:/ipfs/QmRs7MCZ5vUTNJzoCiTiLwzmVaUPDUDEGjRNMWEFEzpezr"
+				"bzz-raw://b2da975fe9a701c4519906d603c16a36ae8b529705d91045fc627a66b392ca05",
+				"dweb:/ipfs/QmYmNL6StzvhVMGpeZQtPS1mZqGn5NPh9CS2yYLKuSZDCo"
 			]
 		},
 		"contracts/storage/LibOwnableStorage.sol": {
@@ -1158,12 +1158,12 @@
 				"dweb:/ipfs/QmTsSWRobibgVAPJuBC7hDJn8yLLotBEa7sjkSgg7pMtNN"
 			]
 		},
-		"contracts/storage/LibSMEambStorage.sol": {
-			"keccak256": "0xa87385b0029e9ed4deb54067622b802f91e5d235b0a4e436fbbfe816cfbc0c8d",
+		"contracts/storage/LibSMElegendaryStorage.sol": {
+			"keccak256": "0x1260d8fe371bc94eac0b65c7f71157b53812aff0f235f27dc463650ab0408b01",
 			"license": "CC0",
 			"urls": [
-				"bzz-raw://2fd56ae295ca1390651d82cba47c13ba61e1d627f85b855796ebcb6d889a289b",
-				"dweb:/ipfs/QmTE5uKVL2MPTrp4CZsongPLKyuYrMksYTqS9RJ39so9Tk"
+				"bzz-raw://e23ce87dfdc3e2082e4f700862aaa38af7c7d8771ceb89caad337b0b02dba7ab",
+				"dweb:/ipfs/QmbCm4k9KHaebB9hrH4zh6UwrbRapNuiFx9gowwapNGRXj"
 			]
 		}
 	},
