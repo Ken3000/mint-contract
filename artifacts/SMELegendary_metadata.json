@@ -1143,11 +1143,11 @@
 			]
 		},
 		"contracts/modules/smeLegendary/SMELegendary.sol": {
-			"keccak256": "0xccf9848a7f75486fcb0c9f672d89303ef0a0a353fe9ee9261a481b716888dfe9",
+			"keccak256": "0xbf39c3b2e7e8cff2ac53c6f28fea4e915584c369c25e100b2e04d4b9493b0311",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2053276c5d71d1da72f17bc305a4e3d9f59c55252e2ef63a6e6ea35432ff03c0",
-				"dweb:/ipfs/Qmc6wG72YPAFF4S4wLtbPwzyoo5boQEMczbDnTsTbjRnQf"
+				"bzz-raw://96231ba4ec0ef4cb8fb4608e8f3d141ec5f5206f321288e8f6f45a57481e922c",
+				"dweb:/ipfs/QmPcbWsjyYhQUEr8RD918CkD4DnnEQiXMTpm8sivCeGsXA"
 			]
 		},
 		"contracts/storage/LibOwnableStorage.sol": {

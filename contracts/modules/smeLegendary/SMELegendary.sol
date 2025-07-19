@@ -140,7 +140,7 @@ contract SMELegendary is ERC721L, Ownable, ReentrancyGuard, IERC721Receiver, IMo
     /// @dev Минт для Легенлари - передает proof для проверки
     function legendaryMint(address to, bytes32[] calldata proof) external payable nonReentrant {
         uint256 _tokenId = _nextTokenId();
-        require( _tokenId > MAX_SUPPLY_GENESIS, "Error alloc - id from genesis");
+        require( _tokenId >= MAX_SUPPLY_GENESIS, "Error alloc - id from genesis");
         require( _tokenId < MAX_SUPPLY_LEGEND, "Exceed alloc");
         require(SMElegendaryStorage.guaranteed_minted(to) == false, "Already minted");
         require(msg.value == SMElegendaryStorage.fee(), "Not match price");
