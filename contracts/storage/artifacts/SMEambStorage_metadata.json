@@ -404,7 +404,7 @@
 		"compilationTarget": {
 			"contracts/storage/LibSMEambStorage.sol": "SMEambStorage"
 		},
-		"evmVersion": "prague",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"

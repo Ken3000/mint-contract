@@ -1,0 +1,282 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "MODULE_NAME",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MODULE_VERSION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getImpl",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "_allImpl",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "_selector",
+						"type": "bytes4"
+					}
+				],
+				"name": "getModuleBySelector",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getModules",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes4",
+								"name": "selector",
+								"type": "bytes4"
+							},
+							{
+								"internalType": "address",
+								"name": "module",
+								"type": "address"
+							}
+						],
+						"internalType": "struct IUpdateProxy.modules[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getSelectors",
+				"outputs": [
+					{
+						"internalType": "bytes4[]",
+						"name": "",
+						"type": "bytes4[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_impl",
+						"type": "address"
+					}
+				],
+				"name": "getSelectorsByImpl",
+				"outputs": [
+					{
+						"internalType": "bytes4[]",
+						"name": "",
+						"type": "bytes4[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "module",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes4[]",
+								"name": "selectors",
+								"type": "bytes4[]"
+							}
+						],
+						"internalType": "struct DynamicRouterStorage.moduleDefinition[]",
+						"name": "_modules",
+						"type": "tuple[]"
+					}
+				],
+				"name": "updateModules",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"custom:version": "1.0.0",
+			"details": "Логика работы с селекторами функция и маршрутизацией",
+			"kind": "dev",
+			"methods": {
+				"getImpl()": {
+					"details": "получение всех функций"
+				},
+				"getModuleBySelector(bytes4)": {
+					"details": "получение адреса имплементации по селектору"
+				},
+				"getModules()": {
+					"details": "Перебирает все селекторы и получает по ним модули*"
+				},
+				"getSelectors()": {
+					"details": "получение всех селекторов"
+				},
+				"getSelectorsByImpl(address)": {
+					"details": "получение селекторов имплементации"
+				},
+				"updateModules((address,bytes4[])[])": {
+					"details": "Обновление модулей используя безопасную функцию библиотеки"
+				}
+			},
+			"stateVariables": {
+				"MODULE_NAME": {
+					"details": "Название модуля"
+				},
+				"MODULE_VERSION": {
+					"details": "Версия модуля"
+				}
+			},
+			"title": "UpdateProxy",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getModules()": {
+					"notice": "Получение всех имплементаций по селекторам"
+				}
+			},
+			"notice": "Управление динамическим маршрутизатором",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/modules/updateProxy/UpdateProxy.sol": "UpdateProxy"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"/contracts/free/FreeVersion.sol": {
+			"keccak256": "0xdfb171afd6d79e406b0b00c3a7e773f5e75e217f2bb5936009d4bf623f4d79a7",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://a5e6e60aece6bc6cc366de0211796665be9dcff02d67469e16c3bce36fd25727",
+				"dweb:/ipfs/QmfVSqznEfgE5zhqsa9fVEKP5amNHnP237BiWvtRaHNpzx"
+			]
+		},
+		"/contracts/mixins/Ownable.sol": {
+			"keccak256": "0xc23fe327a04f4c62e10abc5a81fc924ea80ce38c22f1721d5b1162bb0e2f870c",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://7d521bfaae130e96f56de671f850f7285e44e5fb360ad0531bd74fe476c380ec",
+				"dweb:/ipfs/QmYRNGwEuBZxmS1xGCDH8pM1r7P6bPMZ9shEFYx7TA4igd"
+			]
+		},
+		"/contracts/modules/IModule.sol": {
+			"keccak256": "0xc984c9ddcaf03f313864863d320b027872f0f5ebf1d6c6b6ba5ee3d02d2d0a3c",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://72d457dd3d175def23e82e46f3e9b58fc5f6e5065cc2ec76edce69f5cd5b1865",
+				"dweb:/ipfs/QmbmKRZ29DoFi2h5xiBa7C1S7aotCdzzikHCsVVJoydtRv"
+			]
+		},
+		"/contracts/storage/LibDynamicRouterStorage.sol": {
+			"keccak256": "0xb8d831b5f05fdb365322fbbd058d60fda75c6f391055817e2cf68a51e6443659",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://2906085bcbbc2d41da14d84ffbfad89718036199c555e541399b58d5cc38c0a3",
+				"dweb:/ipfs/QmUgwWrtwSqypp7JVrY6PiuAN6nEKjKozd57tR34EdVXQ5"
+			]
+		},
+		"contracts/lib/@openzeppelin/contracts/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"contracts/modules/updateProxy/IUpdateProxy.sol": {
+			"keccak256": "0xc38c955c3c55757afbf93ee90804689258fd542e2e134eb48f172a12f6a8dd6b",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://c9e43581779c29e01bdba1450e06759143aeeb8cb03993ed4f9f9a4ad2f94361",
+				"dweb:/ipfs/QmYxpL5RX1bR9yZPq9GNp6SemxofHqzwRWnipt3ng8aAUD"
+			]
+		},
+		"contracts/modules/updateProxy/UpdateProxy.sol": {
+			"keccak256": "0x24f874b2c5142b62d221d009002a8e96a91e3d99dab8becfe2b6423ff88db5bb",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://84d782b61c35bacc171f935bf8650fd5c013249758ef26a738e6a4260e59e422",
+				"dweb:/ipfs/QmNhvyGzNvdcf67q9nyVQGeRHpMRDL2y54rdNZANraUk35"
+			]
+		},
+		"contracts/storage/LibOwnableStorage.sol": {
+			"keccak256": "0xa6163a0e493a2bda74fb2013f6affe407bf1c43970d53280a4c2aa722bdfedb2",
+			"license": "CC0",
+			"urls": [
+				"bzz-raw://04c98c67c41f4190985688409cf62925436ef19138edbcf47430c8426555250f",
+				"dweb:/ipfs/QmTsSWRobibgVAPJuBC7hDJn8yLLotBEa7sjkSgg7pMtNN"
+			]
+		}
+	},
+	"version": 1
+}
